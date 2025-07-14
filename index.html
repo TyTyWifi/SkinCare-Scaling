@@ -123,10 +123,6 @@
             position: relative;
         }
 
-        .hero-section .section-content {
-            margin-top: 0;
-        }
-
         .hero-badge {
             display: inline-block;
             background: rgba(0, 0, 0, 0.5);
@@ -825,25 +821,6 @@
                 if (!isActive) {
                     faqItem.classList.add('active');
                 }
-            });
-        });
-
-        // Add active state to navigation items on scroll
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section[id]');
-            const navItems = document.querySelectorAll('.nav-item');
-            
-            let currentSection = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 100;
-                const sectionHeight = section.clientHeight;
-                if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-                    currentSection = section.getAttribute('id');
-                }
-            });
-            
-            navItems.forEach(item => {
-                item.style.color = item.getAttribute('href') === '#' + currentSection ? '#8b4513' : '#6b4423';
             });
         });
     </script>
